@@ -12,6 +12,8 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\EasyOrder.Application\EasyOrder.Application\EasyOrder.Application.csproj" />
+      <ProjectReference Include="..\..\EasyOrder.Domain\EasyOrder.Domain\EasyOrder.Domain.csproj" />
+      <ProjectReference Include="..\..\EasyOrder.Infrastructure\EasyOrder.Infrastructure\EasyOrder.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

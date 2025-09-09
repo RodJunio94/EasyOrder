@@ -30,4 +30,5 @@ public class Order
         OrderDate = DateTime.UtcNow;
         Status = OrderStatus.Created;
     }
+    public List<Order> Items { get; set; } = new();
 }

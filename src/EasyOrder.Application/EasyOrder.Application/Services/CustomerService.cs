@@ -1,9 +1,10 @@
 ﻿using EasyOrder.Application.DTOs;
+using EasyOrder.Application.Interfaces;
 using EasyOrder.Domain.Interfaces;
 
 namespace EasyOrder.Application.Services
 {
-    public class CustomerService
+    public class CustomerService : ICustomerService
     {
         private readonly ICustomerRepository _customerRepository;
 
@@ -16,6 +17,7 @@ namespace EasyOrder.Application.Services
         {
             var customer = new Domain.Entities.Customer
             {
+                CustomerId = Guid.NewGuid(),
                 Name = createCustomerDto.Name,
                 Email = createCustomerDto.Email,
                 PhoneNumber = createCustomerDto.PhoneNumber,

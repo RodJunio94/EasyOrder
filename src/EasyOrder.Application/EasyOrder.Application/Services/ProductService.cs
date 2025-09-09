@@ -1,9 +1,10 @@
 ﻿using EasyOrder.Application.DTOs;
+using EasyOrder.Application.Interfaces;
 using EasyOrder.Domain.Interfaces;
 
 namespace EasyOrder.Application.Services;
 
-public class ProductService
+public class ProductService : IProductService
 {
     private readonly IProductRepository _productRepository;
     public ProductService(IProductRepository productRepository)
@@ -14,6 +15,7 @@ public class ProductService
     {
         var product = new Domain.Entities.Product
         {
+            ProductId = Guid.NewGuid(),
             Name = productDto.Name,
             Description = productDto.Description,
             Price = productDto.Price,
