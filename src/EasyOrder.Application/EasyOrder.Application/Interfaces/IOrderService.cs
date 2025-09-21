@@ -5,7 +5,7 @@ namespace EasyOrder.Application.Interfaces;
 
 public interface IOrderService
 {
-    Task<Guid> CreateOrderAsync(CreateOrderDto dto);
+    Task<OrderResponseDto> CreateOrderAsync(CreateOrderDto dto);
     Task<Domain.Entities.Order?> GetOrderByIdAsync(Guid orderId);
     Task<IEnumerable<Domain.Entities.Order>> GetOrdersByCustomerIdAsync(Guid customerId);
     Task UpdateOrderAsync(Order order);

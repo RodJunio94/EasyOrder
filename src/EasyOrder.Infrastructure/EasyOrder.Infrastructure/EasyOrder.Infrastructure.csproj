@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.5.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\EasyOrder.Domain\EasyOrder.Domain\EasyOrder.Domain.csproj" />
+    <ProjectReference Include="..\..\EasyOrder.Application\EasyOrder.Application\EasyOrder.Application.csproj" />
   </ItemGroup>
 
 </Project>

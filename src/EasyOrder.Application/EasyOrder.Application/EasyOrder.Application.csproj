@@ -10,4 +10,8 @@
     <ProjectReference Include="..\..\EasyOrder.Domain\EasyOrder.Domain\EasyOrder.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MassTransit" Version="8.5.2" />
+  </ItemGroup>
+
 </Project>

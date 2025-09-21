@@ -26,8 +26,8 @@ public class OrderController : ControllerBase
         }
         try
         {
-            var orderId = await _orderService.CreateOrderAsync(createOrderDto);
-            return CreatedAtAction(nameof(GetOrderById), new { orderId }, new { OrderId = orderId });
+            var orderResponse = await _orderService.CreateOrderAsync(createOrderDto);
+            return CreatedAtAction(nameof(GetOrderById), new { orderId = orderResponse.OrderId }, orderResponse);
         }
         catch (Exception ex)
         {

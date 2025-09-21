@@ -2,6 +2,7 @@ using EasyOrder.Application.Interfaces;
 using EasyOrder.Application.Services;
 using EasyOrder.Domain.Interfaces;
 using EasyOrder.Infrastructure.Repositories;
+using EasyOrder.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,8 @@ builder.Services.AddSingleton<IProductRepository, InMemoryProductRepository>();
 builder.Services.AddSingleton<IOrderService, OrderService>();
 builder.Services.AddSingleton<ICustomerService, CustomerService>();
 builder.Services.AddSingleton<IProductService, ProductService>();
+
+builder.Services.AddRabbitMQService();
 
 var app = builder.Build();
 

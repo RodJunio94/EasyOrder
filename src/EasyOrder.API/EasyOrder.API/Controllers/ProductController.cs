@@ -1,5 +1,6 @@
 ﻿using EasyOrder.Application.DTOs;
 using EasyOrder.Application.Interfaces;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EasyOrder.API.Controllers;

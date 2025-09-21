@@ -1,12 +1,14 @@
 ﻿using EasyOrder.Application.DTOs;
 using EasyOrder.Application.Interfaces;
 using EasyOrder.Domain.Interfaces;
+using MassTransit;
 
 namespace EasyOrder.Application.Services;
 
 public class ProductService : IProductService
 {
     private readonly IProductRepository _productRepository;
+
     public ProductService(IProductRepository productRepository)
     {
         _productRepository = productRepository;
@@ -22,7 +24,9 @@ public class ProductService : IProductService
             StockQuantity = productDto.StockQuantity,
             CreatedAt = DateTime.UtcNow
         };
+
         await _productRepository.AddProductAsync(product);
+
         return product.ProductId;
     }
     public Task<IEnumerable<Domain.Entities.Product>> GetAllProductsAsync() => _productRepository.GetAllProductsAsync();
